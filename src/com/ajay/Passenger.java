@@ -58,4 +58,37 @@ public class Passenger implements User {
 			
 		}
 		
+		public void showPassengerPage() {
+			while(true) {
+				Scanner sc = new Scanner(System.in);
+				System.out.println("1. Book a ticket");
+				System.out.println("2. Show ticket");
+				System.out.println("3. Exit");
+				int choice=sc.nextInt();
+				switch(choice) {
+				case 1:
+					System.out.println("Enter name: ");
+					String Name=sc.next();
+					System.out.println("Enter Age: ");
+					int Age = sc.nextInt();
+					System.out.println("Enter Source station name: ");
+					String Source=sc.next();
+					System.out.println("Enter Destination station name: ");
+					String Destination=sc.next();
+					User p=new Passenger(Name, Age);
+					Ticket t = new Ticket(Source, Destination, p);
+					p.book(t);
+					break;
+				case 2:
+					System.out.println("Enter ticket id to show: ");
+					int ticketId=sc.nextInt();
+					Ticket tt = new Ticket();
+					tt.showTicket(ticketId);
+					break;
+				case 3:
+					return;
+				}
+			}
+		}
+		
 }

@@ -19,11 +19,11 @@ public class Ticket {
 		price=0;
 	}
 	
-	public Ticket(String source, String destination, Passenger passenger, int price) {
+	public Ticket(String source, String destination, User passenger, int price) {
 		this.ticketid=(int) SEQ.getAndIncrement();
 		this.source = source;
 		this.destination=destination;
-		this.passengerName= passenger.getName();
+		this.passengerName=((Passenger) passenger).getName();
 		this.price=price;
 	}
 
@@ -36,10 +36,10 @@ public class Ticket {
 
 	
 
-	public Ticket(String source, String destination, Passenger p) {
+	public Ticket(String source, String destination, User p) {
 		this.source=source;
 		this.destination=destination;
-		this.passengerName=p.getName();
+		this.passengerName=((Passenger) p).getName();
 		price=999;
 	}
 
