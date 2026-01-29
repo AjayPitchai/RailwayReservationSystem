@@ -50,7 +50,7 @@ public class Passenger implements User {
 		}
 
 		@Override
-		public void desplayDetails() {
+		public void displayDetails() {
 			System.out.println("**********Passenger Details***********");
 			System.out.println("Passenger Name: "+this.getName());
 			System.out.println("Age: "+this.getAge());
